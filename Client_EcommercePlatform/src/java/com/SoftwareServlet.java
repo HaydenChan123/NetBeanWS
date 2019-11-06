@@ -70,7 +70,9 @@ public class SoftwareServlet extends HttpServlet {
 //            request.setAttribute("Availability", listAvail);
             request.setAttribute("string", text);
             request.getRequestDispatcher("/SoftwareInfo.jsp").forward(request, response);
-            response.sendRedirect(request.getContextPath() + "/SoftwareInfo.jsp");
+            response.sendRedirect(request.getContextPath() + "/SoftwareInfo.jsp");request.setAttribute("string", text);
+            request.getRequestDispatcher("/SoftwareInfo.jsp").forward(request, response);
+
             
         } catch (ClassNotFoundException_Exception ex) {
             Logger.getLogger(SoftwareServlet.class.getName()).log(Level.SEVERE, null, ex);
